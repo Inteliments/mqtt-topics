@@ -1,0 +1,15 @@
+{
+  "name": "mqtt-topics",
+  "version": "1.0.0",
+  "description": "Tool for matching MQTT topic name against topic filter.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Inteliments",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
