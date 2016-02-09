@@ -6,12 +6,12 @@ class MqttTopics {
   }
   
   match(topicFilter, topicName) {
-    var patternSegments = topicFilter.split(this.topicSeparator);
-    var topicSegments = topicName.split(this.topicSeparator);
+    var filterSegments = topicFilter.split(this.topicSeparator);
+    var nameSegments = topicName.split(this.topicSeparator);
     
-    for (var i = 0; i < topicSegments.length; i++) {
-      var topicSegment = topicSegments[i];
-      var patternSegment = patternSegments[i];
+    for (var i = 0; i < filterSegments.length; i++) {
+      var topicSegment = nameSegments[i];
+      var patternSegment = filterSegments[i];
       var match = false;
       
       if(topicSegment === patternSegment)
@@ -27,7 +27,7 @@ class MqttTopics {
         return false;      
     } 
     
-    if(topicSegments.length !== patternSegments.length)
+    if(nameSegments.length !== filterSegments.length)
       return false;
     
     return true;

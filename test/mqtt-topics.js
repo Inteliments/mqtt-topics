@@ -30,6 +30,11 @@ describe(`Topic filter ${topicFilter2}`, function() {
 	it(`should not match topic name ${topicName2}`, function() {
 		assert.equal(MqttTopics.match(topicFilter2, topicName2), false, `'${topicName2}' matches '${topicFilter2}'`);
 	});
+  
+  var topicName3 = 'sport/tennis';  
+	it(`should match topic name ${topicName3}`, function() {
+		assert.equal(MqttTopics.match(topicFilter2, topicName3), true, `'${topicName3}' does not match '${topicFilter2}'`);
+	});
 });
 
 describe(`Topic filter ${topicFilter3}`, function() {
